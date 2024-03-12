@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { CardProps } from "../../../../@types/card";
 import {
   Container,
@@ -11,14 +10,26 @@ import {
 import { maskMoney } from "../../../../utils/maskMoney";
 
 import { MinusCircle, PlusCircle, Trash } from "phosphor-react";
+import { useCart } from "../../../../zustand/useCart";
+interface Props {
+  item: CardProps;
+}
+export const CartItem = ({ item }: Props) => {
+  const { changeCartItemQuantity, removeCartItem } = useCart();
 
-export const CartItem = () => {
-  const [item, setItem] = useState<CardProps>({
-    id: 1,
-    title: "Viúva Negra",
-    price: 9.99,
-    image: "https://wefit-react-web-test.s3.amazonaws.com/viuva-negra.png",
-  });
+  const handleAddQuantity = () => {
+    changeCartItemQuantity(item.id, "increase");
+  };
+
+  const handleRemoveQuantity = () => {
+    if (item.quantity === 1) return;
+
+    changeCartItemQuantity(item.id, "decrease");
+  };
+
+  const handleDeleteItem = () => {
+    removeCartItem(item.id);
+  };
   return (
     <Container>
       <DivItem>
@@ -31,11 +42,11 @@ export const CartItem = () => {
         </div>
       </DivItem>
       <DivQTD>
-        <ButtonQTD>
+        <ButtonQTD onClick={handleRemoveQuantity}>
           <MinusCircle />
         </ButtonQTD>
-        <input type="text" />
-        <ButtonQTD>
+        <input type="text" value={item.quantity} />
+        <ButtonQTD onClick={handleAddQuantity}>
           <PlusCircle />
         </ButtonQTD>
       </DivQTD>
@@ -43,7 +54,7 @@ export const CartItem = () => {
         <span>R$ 29,00</span>
       </DivValue>
       <DivExclude>
-        <button>
+        <button onClick={handleDeleteItem}>
           <Trash />
         </button>
       </DivExclude>

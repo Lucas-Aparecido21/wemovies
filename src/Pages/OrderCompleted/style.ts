@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -36,17 +37,21 @@ export const ContainerOrderCompleted = styled.div`
     line-height: 1.35;
     text-align: center;
   }
+`;
 
-  button {
-    cursor: pointer;
-    width: 100%;
-    max-width: 173px;
-    height: 40px;
-    background-color: #009edd;
-    color: #ffffff;
-    border-radius: 4px;
-    border: none;
-    padding: 8px;
-    margin-top: 1.5rem;
-  }
+export const StyledNavLink = styled(NavLink)`
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  max-width: 173px;
+  height: 40px;
+  background-color: #009edd;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+  padding: 8px;
+  margin-top: 1.5rem;
+  align-items: center;
+  justify-content: center;
 `;

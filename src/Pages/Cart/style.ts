@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -12,7 +13,8 @@ export const Container = styled.div`
 export const ContainerCart = styled.div`
   width: 100%;
   max-width: 1000px;
-  height: 293px;
+  min-height: 293px;
+  max-height: 520px;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -21,6 +23,8 @@ export const ContainerCart = styled.div`
   flex-direction: column;
   align-items: center;
 
+  overflow-y: auto;
+  overflow-x: hidden;
   img {
     width: 100%;
     max-width: 295px;
@@ -65,11 +69,6 @@ export const FooterCart = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-
-  button {
-    width: 296px;
-    height: 40px;
-  }
 `;
 
 export const Divider = styled.hr`
@@ -77,4 +76,16 @@ export const Divider = styled.hr`
   height: 2px;
   background-color: #999999;
   margin: 10px 0;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  all: unset;
+  width: 296px;
+  height: 40px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #009edd;
+  border-radius: 4px;
+  padding: 8px;
+  color: #ffff;
 `;

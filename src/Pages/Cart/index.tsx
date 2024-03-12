@@ -4,11 +4,15 @@ import {
   ContainerCart,
   Divider,
   FooterCart,
+  StyledNavLink,
   SubHeaderContainer,
 } from "./style";
 import CartItem from "./Components/CartItem";
+import { useCart } from "../../zustand/useCart";
 
 export function Cart() {
+  const { cartItems } = useCart();
+
   return (
     <>
       <Container>
@@ -19,11 +23,16 @@ export function Cart() {
             <span>QTD</span>
             <span>SUBTOTAL</span>
           </SubHeaderContainer>
-          <CartItem />
+          {cartItems.map((item) => (
+            <CartItem key={item.id} item={item} />
+          ))}
+
           <Divider />
           <FooterCart>
             <div>
-              <button>FINALIZAR PEDIDO</button>
+              <StyledNavLink to="/order-completed">
+                FINALIZAR PEDIDO
+              </StyledNavLink>
             </div>
             <div>
               <span>TOTAL</span>

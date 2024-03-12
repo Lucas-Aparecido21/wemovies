@@ -1,20 +1,23 @@
-import { HeaderContainer } from "./style";
+import { HeaderContainer, StyledNavLink } from "./style";
 import Cart from "../../assets/cart.svg";
+import { NavLink } from "react-router-dom";
+import { useCart } from "../../zustand/useCart";
 
 export const Header = () => {
+  const { cartItems } = useCart();
   return (
     <>
       <HeaderContainer>
-        <div>
+        <StyledNavLink to="/">
           <h2>WeMovies</h2>
-        </div>
-        <div>
+        </StyledNavLink>
+        <StyledNavLink to="/cart">
           <p>Meu carrinho</p>
-          <span>0 itens</span>
+          <span>{cartItems.length} itens</span>
           <div>
             <img src={Cart} alt="shopping cart" />
           </div>
-        </div>
+        </StyledNavLink>
       </HeaderContainer>
     </>
   );

@@ -29,7 +29,7 @@ export const CardContainer = styled.div`
 
   button {
     margin-top: 15px;
-
+    cursor: pointer;
     width: 306px;
     height: 40px;
     background-color: #009edd;

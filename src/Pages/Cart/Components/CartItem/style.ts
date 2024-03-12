@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin-top: 8px;
 `;
 
 export const DivItem = styled.div`
@@ -36,4 +37,11 @@ export const ButtonQTD = styled.button`
   color: #009edd;
 `;
 export const DivValue = styled.div``;
-export const DivExclude = styled.div``;
+
+export const DivExclude = styled.div`
+  button {
+    all: unset;
+    width: 18px;
+    height: 18px;
+  }
+`;

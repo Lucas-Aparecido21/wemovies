@@ -1,4 +1,8 @@
 export function maskMoney(valor: number): string {
-  const valorFormatado = valor.toFixed(2);
-  return `R$ ${valorFormatado}`;
+  if (typeof valor === "number") {
+    const valorFormatado = valor.toFixed(2);
+    return `R$ ${valorFormatado}`;
+  } else {
+    return "";
+  }
 }
