@@ -17,6 +17,8 @@ export const ContainerCart = styled.div`
   max-height: 520px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
 
   background-color: #ffffff;
   display: flex;
@@ -71,17 +73,41 @@ export const FooterCart = styled.div`
   align-items: center;
 `;
 
+export const DivFooterButton = styled.div`
+  margin-bottom: 24px;
+  margin-top: 24px;
+`;
+
+export const DivFooterTotal = styled.div`
+  display: flex;
+  width: 197px;
+  height: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  justify-content: space-between;
+
+  align-items: center;
+  span {
+    font-size: 14px;
+    color: #999999;
+  }
+
+  p {
+    font-size: 24px;
+  }
+`;
+
 export const Divider = styled.hr`
-  border: none;
-  height: 2px;
+  width: 100%;
+  border: 1px solid;
   background-color: #999999;
-  margin: 10px 0;
+  margin-top: 24px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
   all: unset;
-  width: 296px;
-  height: 40px;
+  width: 157px;
+  height: 18px;
   font-size: 12px;
   cursor: pointer;
   background-color: #009edd;

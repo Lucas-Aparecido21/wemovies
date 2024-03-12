@@ -4,7 +4,6 @@ export const CardContainer = styled.div`
   max-width: 338px;
   max-height: 324px;
   min-height: 324px;
-  min-width: 324px;
   width: 100%;
   height: 100%;
   background-color: #ffff;
@@ -30,7 +29,7 @@ export const CardContainer = styled.div`
   button {
     margin-top: 15px;
     cursor: pointer;
-    width: 306px;
+    max-width: 306px;
     height: 40px;
     background-color: #009edd;
     color: #ffff;

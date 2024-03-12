@@ -15,6 +15,7 @@ interface Props {
   item: CardProps;
 }
 export const CartItem = ({ item }: Props) => {
+  const totalItem = item.price * Number(item.quantity);
   const { changeCartItemQuantity, removeCartItem } = useCart();
 
   const handleAddQuantity = () => {
@@ -51,7 +52,7 @@ export const CartItem = ({ item }: Props) => {
         </ButtonQTD>
       </DivQTD>
       <DivValue>
-        <span>R$ 29,00</span>
+        <span>{maskMoney(totalItem)}</span>
       </DivValue>
       <DivExclude>
         <button onClick={handleDeleteItem}>

@@ -5,6 +5,7 @@ import { useCart } from "../../zustand/useCart";
 
 export const Header = () => {
   const { cartItems } = useCart();
+  const isMobile = window.innerWidth <= 768;
   return (
     <>
       <HeaderContainer>
@@ -12,8 +13,10 @@ export const Header = () => {
           <h2>WeMovies</h2>
         </StyledNavLink>
         <StyledNavLink to="/cart">
-          <p>Meu carrinho</p>
-          <span>{cartItems.length} itens</span>
+          <div>
+            {!isMobile && <p>Meu carrinho</p>}
+            <span>{cartItems.length} itens</span>
+          </div>
           <div>
             <img src={Cart} alt="shopping cart" />
           </div>
