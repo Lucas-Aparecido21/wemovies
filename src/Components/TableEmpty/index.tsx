@@ -7,7 +7,9 @@ export const TableEmpty = () => {
       <ContainerEmpty>
         <h1>Parece que não há nada por aqui :(</h1>
         <img src={Empty} alt="" />
-        <button>Recarregar página</button>
+        <button onClick={() => window.location.reload()}>
+          Recarregar página
+        </button>
       </ContainerEmpty>
     </>
   );

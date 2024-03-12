@@ -20,9 +20,10 @@ export const ContainerCard = styled.div`
   row-gap: 24px;
   margin-bottom: 40px;
   justify-content: center;
+  width: 100%;
 
-  @media (min-width: 1015px) {
+  @media (min-width: 764px) {
     grid-template-columns: repeat(3, 1fr);
-    margin: 16px;
+    width: 90%;
   }
 `;

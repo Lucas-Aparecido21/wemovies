@@ -11,5 +11,6 @@ box-sizing: border-box;
 body{
     font-family: 'Open-sans', sans-serif;
     font-weight: 700;
+    background-color: #2f2e41;
 }
 `;

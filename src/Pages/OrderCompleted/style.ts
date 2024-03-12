@@ -37,6 +37,11 @@ export const ContainerOrderCompleted = styled.div`
     line-height: 1.35;
     text-align: center;
   }
+
+  @media (max-width: 1015px) {
+    width: 90%;
+    height: 70%;
+  }
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -45,7 +50,7 @@ export const StyledNavLink = styled(NavLink)`
   display: flex;
   width: 100%;
   max-width: 173px;
-  height: 40px;
+  height: 30px;
   background-color: #009edd;
   color: #ffffff;
   border-radius: 4px;

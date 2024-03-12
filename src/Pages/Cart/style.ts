@@ -31,6 +31,11 @@ export const ContainerCart = styled.div`
     width: 100%;
     max-width: 295px;
     height: 307;
+
+    @media (max-width: 1015px) {
+      width: 64px;
+      height: 82px;
+    }
   }
 
   h1 {
@@ -43,27 +48,32 @@ export const ContainerCart = styled.div`
     text-align: center;
   }
 
-  button {
-    cursor: pointer;
-    width: 100%;
-    max-width: 173px;
-    height: 40px;
-    background-color: #009edd;
-    color: #ffffff;
-    border-radius: 4px;
-    border: none;
-    padding: 8px;
-    margin-top: 1.5rem;
+  @media (max-width: 1015px) {
+    width: 90%;
   }
 `;
 
 export const SubHeaderContainer = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-between;
   margin: 20px;
   color: #999999;
   font-size: 14px;
+`;
+
+export const SubHeaderProduto = styled.div`
+  max-width: 246px;
+  width: 100%;
+`;
+export const SubHeaderQTD = styled.div`
+  max-width: 348px;
+  width: 100%;
+`;
+export const SubHeaderValue = styled.div`
+  max-width: 348px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 `;
 
 export const FooterCart = styled.div`
@@ -76,14 +86,16 @@ export const FooterCart = styled.div`
 export const DivFooterButton = styled.div`
   margin-bottom: 24px;
   margin-top: 24px;
+  width: 100%;
 `;
 
 export const DivFooterTotal = styled.div`
   display: flex;
-  width: 197px;
+  width: 240px;
   height: 24px;
   margin-bottom: 24px;
   margin-top: 24px;
+
   justify-content: space-between;
 
   align-items: center;
@@ -94,6 +106,19 @@ export const DivFooterTotal = styled.div`
 
   p {
     font-size: 24px;
+  }
+
+  @media (max-width: 1015px) {
+    width: 100%;
+
+    justify-content: center;
+    gap: 8px;
+    span {
+      font-size: 14px;
+    }
+    p {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -106,12 +131,18 @@ export const Divider = styled.hr`
 
 export const StyledNavLink = styled(NavLink)`
   all: unset;
-  width: 157px;
-  height: 18px;
+  width: 100%;
+  height: 100%;
   font-size: 12px;
   cursor: pointer;
   background-color: #009edd;
   border-radius: 4px;
   padding: 8px;
   color: #ffff;
+
+  @media (max-width: 1015px) {
+    width: 40%;
+    height: 40%;
+    font-size: 8px;
+  }
 `;

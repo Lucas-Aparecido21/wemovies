@@ -40,4 +40,7 @@ export const ContainerEmpty = styled.div`
     padding: 8px;
     margin-top: 1.5rem;
   }
+  @media (max-width: 1015px) {
+    width: 90%;
+  }
 `;

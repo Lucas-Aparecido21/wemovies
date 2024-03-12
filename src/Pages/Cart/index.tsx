@@ -8,6 +8,9 @@ import {
   FooterCart,
   StyledNavLink,
   SubHeaderContainer,
+  SubHeaderProduto,
+  SubHeaderQTD,
+  SubHeaderValue,
 } from "./style";
 import CartItem from "./Components/CartItem";
 import { useCart } from "../../zustand/useCart";
@@ -15,16 +18,22 @@ import { maskMoney } from "../../utils/maskMoney";
 
 export function Cart() {
   const { cartItems, cartItemsTotal } = useCart();
-
+  const isMobile = window.innerWidth <= 768;
   return (
     <>
       <Container>
         <Header />
         <ContainerCart>
-          <SubHeaderContainer>
-            <span>PRODUTO</span>
-            <span>QTD</span>
-            <span>SUBTOTAL</span>
+          <SubHeaderContainer style={{ display: isMobile ? "none" : "flex" }}>
+            <SubHeaderProduto>
+              <span>PRODUTO</span>
+            </SubHeaderProduto>
+            <SubHeaderQTD>
+              <span>QTD</span>
+            </SubHeaderQTD>
+            <SubHeaderValue>
+              <span>SUBTOTAL</span>
+            </SubHeaderValue>
             <span></span>
           </SubHeaderContainer>
           {cartItems.map((item) => (

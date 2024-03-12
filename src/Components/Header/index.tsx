@@ -1,6 +1,5 @@
 import { HeaderContainer, StyledNavLink } from "./style";
 import Cart from "../../assets/cart.svg";
-import { NavLink } from "react-router-dom";
 import { useCart } from "../../zustand/useCart";
 
 export const Header = () => {
