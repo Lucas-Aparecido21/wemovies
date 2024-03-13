@@ -15,15 +15,16 @@ export const Container = styled.div`
 export const ContainerCard = styled.div`
   display: grid;
   height: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 16px;
   row-gap: 24px;
   margin-bottom: 40px;
   justify-content: center;
   width: 100%;
+  max-width: 1080px;
 
-  @media (min-width: 764px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 764px) {
+    grid-template-columns: repeat(1, 1fr);
     width: 90%;
   }
 `;
